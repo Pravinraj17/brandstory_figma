@@ -1,5 +1,5 @@
 		<?php
-        include './database/connect.php';
+        include './New folder/connect.php';
 
         if (isset($_POST['submit'])) {
 
