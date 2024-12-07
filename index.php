@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 		<?php
         include './New folder/connect.php';
 
@@ -18,6 +19,8 @@
         }
 
 		?>
+=======
+>>>>>>> 7e3eafc (Removing dynamic method and change into static)
 
 		<!DOCTYPE html>
 		<html>
@@ -447,93 +450,39 @@
 
 					<section id="testimonials">
 						
-						<div class="container-fluid">
-							<div class="row">
-							<div class="col">
-								<h4 class="text-center mt-3">Testimonials</h4>
+						<div class="container-fluid mt-4 bg-secondary bg-opacity-50 rounded">
+							<div class="text-center mt-3">
+								<h3>Testinomials</h3>
+							</div>
 
-								<div class="owl-carousel">
-
-											<?php
-
-        if (isset($_POST['submit'])) {
-
-        	$name=$_POST['name'];
-        	$bio=$_POST['bio'];
-        	$profession=$_POST['profession'];
-        	$user_image=$_FILES['user_image']['name'];
-        	$tmp_image=$_FILES['user_image']['tmp_name'];
-            move_uploaded_file($tmp_image,"./images/images/$user_image");
-        	$insert_query="insert into `brand_story` (name,bio,image,profession) values ('$name','$bio','$user_image','$profession')";
-              
-             $insert_result=mysqli_query($con,$insert_query);
-	
-        }
-
-        $select_query="select * from `brand_story`";
-        $select_result=mysqli_query($con,$select_query);
-
-        if ($select_result) {
-            while($row=mysqli_fetch_assoc($select_result)){
-            	$username=$row['name'];
-            	$user_bio=$row['bio'];
-            	$user_img=$row['image'];
-            	$user_profession=$row['profession'];
-            	echo "
-            	 <div class='item text-center'>
-            	 <i class='bi bi-quote'></i>
-            	 <div class='d-flex align-items-center justify-content-center'>
-            	 <img src='./images/$user_img' style='width:50px;' class='rounded-circle'>
-            	 </div>
-            	<div><p>$user_bio</p></div>
-            	<div><h4>$username</h4></div>
-            	<div><p>$user_profession</p></div>
-
-
-
-                                           </div>";
-            }
-        }
-
-
-		?>
-
-		
-		
-
-
-	
+							<div class="row ">
+								<div class="col-sm-4 review d-flex justify-content-center my-4">
+									<img src="./images/blank-profile-picture-973460_640(1).png" class="rounded-circle">
+								</div>
+								<div class="col-md-8">
 									
-
+									<div class="my-2 quotes">
+										<i class="bi bi-quote"></i>
+									</div>
+									<div>
+										<p>The Equence platform was instrumental in our path to becoming the 4th largest diagnostic company in India. Their invaluable support in our lead generation campaigns generated a strong ROI. Their real-time analytics were pivotal for conducting effective A/B testing and optimizing our marketing initiatives when needed. I wholeheartedly recommend their services.</p>
+									</div>
+									<div class="row">
+									<div class="col-md-6 my-4">
+										<h5>Guest</h5>
+										<label>Group Chief Operating Officer</label>
+									</div>
+									<div class="col-md-6">
+										<div class="nav-brand d-flex justify-content-center">
+											<h4>LOGO</h4>
+										</div>
+									</div>
+									</div>
 
 								</div>
 							</div>
-						</div>
 
-						<div class="my-3 form bg-light">
-							<h3 class="text-center">Testimonials Form</h3>
-							<form method="post" action="" enctype="multipart/form-data">
-								<div class="my-3">
-									<label class="form-label">Name</label>
-									<input type="text" class="form-control form-control-sm" name="name">				
-								</div>
-								<div class="my-3">
-									<label class="form-label">Bio</label>
-									<input type="text" class="form-control form-control-sm" name="bio">				
-								</div>
-								<div class="my-3">
-									<label class="form-label">Image</label>
-									<input type="file" class="form-control form-control-sm" name="user_image">				
-								</div>
-								<div class="my-3">
-									<label class="form-label">Profession</label>
-									<input type="text" class="form-control form-control-sm" name="profession">				
-								</div>
-								<div class="my-3">
-									<button class="btn btn-primary" type="submit" name="submit">Submit</button>
-								</div>
-							</form>
-						</div>
+
 						</div>
 
 					</section>
@@ -638,22 +587,5 @@
 		</body>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-		<script>
-							$(document).ready(function () {
-
-					$('.owl-carousel').owlCarousel({ 
-						autoplay:true,
-						autoplayTimeout:4000,
-						animateOut: 'slideOutDown',
-						animateIn: 'flipInX',
-						items:1,
-						loop:true,
-						margin:30,
-						stagePadding:30,
-
-					});
-				})
-		</script>
 
 		</html>

@@ -293,7 +293,14 @@
  text-decoration: none !important;
 
 }
-
+#testimonials .review img
+{
+  width: 200px !important;
+}
+#testimonials .quotes 
+{
+  font-size: 40px;
+}
 
 
 
